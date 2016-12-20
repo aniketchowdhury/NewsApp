@@ -63,7 +63,7 @@ export default class FavNews extends React.Component
                          <div className="col-sm-6">
 
                            <img src={this.props.savedata.urlToImage} width="500px" height="300px"></img><br/><br/>
-                           <input type="button" className="btn btn-danger" value="Delete" onClick={this.newsdelete.bind(this)} />
+                           <input type="button" className="btn btn-danger btn-large" value="Delete" onClick={this.newsdelete.bind(this)} />
                          </div>
 
                        <div className="col-sm-6">

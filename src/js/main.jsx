@@ -10,6 +10,7 @@ import Home from './components/Home.jsx';
 import Contact from './components/Contact.jsx';
 import NavBar from './components/NavBar.jsx';
 import FavNews from './components/SavingNews.jsx';
+import Login from './components/Login.jsx';
 //import MainComponent from './components/MainComponent.jsx'
 
 class MainComponent extends React.Component{
@@ -33,6 +34,7 @@ ReactDOM.render(
              <Route path="/about" component={About}/>
              <Route path="/contact" component={Contact} />
              <Route path="/favnews" component={FavNews} />
+             <Route path="/login" component={Login} />
 
              </Route>
 
