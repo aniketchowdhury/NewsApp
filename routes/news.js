@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var newsdata = require('../models/newsmodel.js');
 
+
+
 /* GET users listing. */
 router.get('/view', function(req, res, next) {
   newsdata.find({},function(err,allnews){
@@ -29,7 +31,7 @@ router.delete("/del",function(req,res) {
 });
 */
 
-router.delete('/del', function(req, res, next) {
+router.delete('/del', isLoggedIn, function(req, res, next) {
 
   newsdata.findOne({Title:req.body.Title}, function(err,news)
 {
@@ -53,7 +55,7 @@ router.delete('/del', function(req, res, next) {
 });
 });
 
-router.post('/save', function(req, res, next) {
+router.post('/save', isLoggedIn,function(req, res, next) {
 
   var newnewsmodel=new newsdata();
   newnewsmodel.Title=req.body.title;
@@ -67,7 +69,7 @@ router.post('/save', function(req, res, next) {
   res.send('save news');
 });
 
-router.put('/update', function(req, res, next) {
+router.put('/update',isLoggedIn, function(req, res, next) {
 
   newsdata.update({Title:req.body.Title},{$set:{Comments:req.body.Comments}},function(err)
   {
@@ -82,5 +84,13 @@ router.put('/update', function(req, res, next) {
   //res.send('Update news');
 });
 
+function isLoggedIn (req, res, next) {
+ if(req.isAuthenticated()){
+ return next()
+ ;}
+ else {
+   res.json('not authenticated');
+ }
+};
 
 module.exports = router;

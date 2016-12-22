@@ -13,5 +13,4 @@ password:String
 });
 
 
-
 module.exports=mongoose.model('userDetails',userDetailsSchema);
