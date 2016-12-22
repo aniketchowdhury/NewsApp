@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {hashHistory} from 'react-router';
+//import NewsDisplay from './NewsDisplay.jsx';
+
 
 export default class Login extends React.Component{
 
@@ -98,6 +100,7 @@ render(){
 
     </div>
   </div>
+
   )
 
 }

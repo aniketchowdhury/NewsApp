@@ -15,7 +15,6 @@ export default class SavingNews extends React.Component
 
 
 newsfun() {
-console.log("676768");
 $.ajax({
 url:  "http://localhost:8080/news/view",
 type: "GET",

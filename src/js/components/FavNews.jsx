@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 
 
@@ -24,6 +25,8 @@ export default class FavNews extends React.Component
    console.log("success");
    /*msg reprewsents JSON data of news headlines sent back by external API*/
    //this.setState({strdata: msg});
+   location.hash = "";
+
    }.bind(this),
    error : function(err){
    console.log("error");
@@ -41,6 +44,7 @@ export default class FavNews extends React.Component
      console.log("success");
      /*msg represents JSON data of news headlines sent back by external API*/
      //this.setState({strdata: msg});
+     location.hash = "";
      }.bind(this),
      error : function(err){
      console.log("error");
@@ -76,7 +80,7 @@ export default class FavNews extends React.Component
 
                            <h5><b>Comments:</b></h5>
                            <label for="comment">{this.props.savedata.Comments}</label><br /><br/>
-                           <input type="text" placeholder=" give your comments" id="news" style={{ "width":"70%", "height":"80px"}} onChange={this.updating.bind(this)} /><br/><br/>
+                           <textarea rows="2" cols="50" placeholder=" give your comments" id="news" onChange={this.updating.bind(this)} /><br/><br/>
                            <input type="button" className="btn btn-primary" value="Update Comments " onClick={this.updateit.bind(this)} />
 
 

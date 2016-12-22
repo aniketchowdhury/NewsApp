@@ -25,6 +25,7 @@ constructor()
    }.bind(this)
    });
    }
+//                     <input type="button" className="btn btn-primary" value="save" onClick={this.saveIt.bind(this)} />
 
    render()
     {
@@ -34,7 +35,8 @@ constructor()
                <div className="jumbotron">
                    <div className="row">
                        <div className="col-sm-6">
-                         <img src={this.props.datanews.urlToImage} width="500px" height="300px"/>
+
+                         <img src={this.props.datanews.urlToImage} class="img-responsive" style={{width:"200px" ,height:"200px"}}  />
 
                        </div>
                      <div className="col-sm-6">
@@ -43,13 +45,14 @@ constructor()
                      <h4>{this.props.datanews.author}</h4>
 
                      </div>
-                     <input type="button" className="btn btn-primary" value="save" onClick={this.saveIt.bind(this)} />
-                     </div>
+                      <input type="button" className="btn btn-primary" value="save" onClick={this.saveIt.bind(this)} />
+                    </div>
                    </div>
                  </div>
                  <hr />
                </div>
            </div>
+
            )
    }
 }
