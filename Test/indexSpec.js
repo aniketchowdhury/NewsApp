@@ -9,7 +9,7 @@ var url = supertest("http://localhost:8080");
 var request = require("supertest");
 var server = request.agent("http://localhost:8080");
 
-/*
+
 describe("Testing the first route", function(err){
  it("should handle and send the computed info", function(done){
    var myObj = {
@@ -134,7 +134,7 @@ describe("Testing the fourth route", function(err){
  });
 });
 
-*/
+
 describe("Testing the fifth route", function(err){
  it("should handle the request", function(done){
  server

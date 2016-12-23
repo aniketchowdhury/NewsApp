@@ -1,3 +1,7 @@
+/*
+      We will be displaying our saved news under favorite news section in this file
+
+*/
 import React from 'react';
 import {hashHistory} from 'react-router';
 
@@ -29,6 +33,8 @@ export default class FavNews extends React.Component
 
    }.bind(this),
    error : function(err){
+     location.hash = "";
+
    console.log("error");
    }.bind(this)
    });

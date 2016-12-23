@@ -1,4 +1,9 @@
-//import 'file?name=[name].[ext]!../index.html';
+/*
+        This is for the Home page
+
+
+*/
+
 
 import React from 'react';
 

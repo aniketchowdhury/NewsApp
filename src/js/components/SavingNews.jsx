@@ -1,3 +1,7 @@
+/*
+        This file saves news
+
+*/
 import React from 'react';
 import FavNews from './FavNews';
 
