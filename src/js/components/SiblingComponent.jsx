@@ -1,3 +1,7 @@
+/*
+        This file creates the search box and search button
+
+*/
 import React from 'react';
 
 export default class SiblingComponent extends React.Component{

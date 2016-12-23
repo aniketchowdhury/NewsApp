@@ -1,3 +1,8 @@
+/*
+          This file maps the json data to an array and sends it to newsdisplay file for displaying news
+
+*/
+
 import React from 'react';
 
 import NewsDisplay from './NewsDisplay.jsx';

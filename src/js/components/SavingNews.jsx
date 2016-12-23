@@ -1,3 +1,7 @@
+/*
+        This file saves news
+
+*/
 import React from 'react';
 import FavNews from './FavNews';
 
@@ -15,7 +19,6 @@ export default class SavingNews extends React.Component
 
 
 newsfun() {
-console.log("676768");
 $.ajax({
 url:  "http://localhost:8080/news/view",
 type: "GET",

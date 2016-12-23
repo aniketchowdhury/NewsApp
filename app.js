@@ -103,6 +103,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+<<<<<<< HEAD
 app.get('/logout',function (req, res){
   req.session.destroy(function (err) {
     res.send('error'); //Inside a callback… bulletproof!
@@ -116,6 +117,10 @@ req.session.destroy();
 });
 */
 
+=======
+
+
+>>>>>>> 8c849f12ab98386eecf1da3c4044312f5535e41d
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
