@@ -1,5 +1,10 @@
 var mongoose=require('mongoose');
-/*this is the main line to include the mangoose*/
+/*this is the main line to include the mangoose
+
+  contains the collection which has the userDetails and paswords
+
+
+*/
 
 
 var schema=mongoose.Schema;

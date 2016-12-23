@@ -8,12 +8,13 @@ var httpProxy = require("http-proxy");
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+//var logout = require('./routes/logout');
 var news = require('./routes/news');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var connectflash = require('connect-flash');
 var User = require('./models/usersmodel.js')
-
+var logout = require('express-passport-logout');
 
 //var app = express();
 
@@ -72,6 +73,14 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/login',login);
 app.use('/news',news);
+//app.use('/logout',logout);
+/*
+app.get('/logout', function (req, res){
+  req.session.destroy(function (err) {
+    res.send('error in logging out'); //Inside a callback… bulletproof!
+  });
+});
+*/
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
@@ -94,12 +103,27 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
+app.get('/logout',function (req, res){
+  req.session.destroy(function (err) {
+    res.send('error'); //Inside a callback… bulletproof!
+  });
+});
+
+
+/*
+app.get('/logout', function(req, res){
+req.session.destroy();
+});
+*/
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
+
+
 
 // error handlers
 
